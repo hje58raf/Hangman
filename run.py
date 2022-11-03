@@ -4,14 +4,17 @@
 
 import random
 
+
 words = ['chicken', 'dog', 'cat', 'mouse', 'frog']
 
+
 lives_remaining = 14
-guessed_letters = ‘’
+guessed_letters = ""
 
-# Getting a Random Word
+
 def pick_a_word():
-word_position = random.randint(0, len(words) - 1)
-return words[word_position]
-print(pick_a_word())
+    word_position = random.randint(0, len(words) - 1)
+    return words[word_position]
 
+
+print(pick_a_word())
