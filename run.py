@@ -53,6 +53,7 @@ def pick_a_word():
     return words[word_position]
 
 
-
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
