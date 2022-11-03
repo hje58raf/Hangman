@@ -91,3 +91,11 @@ def print_word_with_blanks(word):
         else:
             display_word = display_word + '-'
     print(display_word)
+
+
+# Processing the Guess
+def process_guess(guess, word):
+    if len(guess) > 1 and len(guess) == len(word):
+        return whole_word_guess(guess, word)
+    else:
+        return single_letter_guess(guess, word)
