@@ -99,3 +99,31 @@ def process_guess(guess, word):
         return whole_word_guess(guess, word)
     else:
         return single_letter_guess(guess, word)
+
+
+def whole_word_guess(guess, word):
+    global lives_remaining
+    if guess.lower() == word.lower():
+        return True
+    else:
+        lives remaining = lives_remaining – 1
+        return False
+
+
+def single_letter_guess(guess, word):
+    global guessed_letters
+    global lives_remaining
+    if word.find(guess) == 0:
+        lives_remaining = lives_remaining – 1
+    guessed_letters = guessed_letters + guess.lower()
+    if all_letters_guessed(word):
+        return True
+    return False
+
+
+def all_letters_guessed(word):
+    for letter in word:
+        if guessed_letters.find(letter.lower()) == -1:
+            return False
+    return True
+play()
