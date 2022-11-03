@@ -3,7 +3,6 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 import random
-import os
 
 HANGMAN_PICS = ['''
     +---+
@@ -59,6 +58,17 @@ def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+# Printing the Word
+def print_word_with_blanks(word):
+    display_word = ''
+    for letter in word:
+        if guessed_letters.find(letter) > -1:
+            display_word = display_word + letter
+        else:
+            display_word = display_word + '-'
+    print(display_word)
+
+
 # Getting a Guess
 def get_guess(word):
     print_word_with_blanks(word)
@@ -69,7 +79,6 @@ def get_guess(word):
 
 def play():
     word = pick_a_word()
-    clear_terminal()
     print('{:*^80}'.format(' WELCOME TO HANGMAN ! '))
     while True:
         guess = get_guess(word)
@@ -82,17 +91,6 @@ def play():
             break
 
 
-# Printing the Word
-def print_word_with_blanks(word):
-    display_word = ''
-    for letter in word:
-        if guessed_letters.find(letter) > -1:
-            display_word = display_word + letter
-        else:
-            display_word = display_word + '-'
-    print(display_word)
-
-
 # Processing the Guess
 def process_guess(guess, word):
     if len(guess) > 1 and len(guess) == len(word):
@@ -102,11 +100,9 @@ def process_guess(guess, word):
 
 
 def whole_word_guess(guess, word):
-    global lives_remaining
     if guess.lower() == word.lower():
         return True
     else:
-        lives remaining = lives_remaining – 1
         return False
 
 
@@ -114,7 +110,7 @@ def single_letter_guess(guess, word):
     global guessed_letters
     global lives_remaining
     if word.find(guess) == 0:
-        lives_remaining = lives_remaining – 1
+        lives_remaining = lives_remaining - 1
     guessed_letters = guessed_letters + guess.lower()
     if all_letters_guessed(word):
         return True
@@ -126,4 +122,6 @@ def all_letters_guessed(word):
         if guessed_letters.find(letter.lower()) == -1:
             return False
     return True
+
+
 play()
