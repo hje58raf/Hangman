@@ -4,6 +4,42 @@
 
 import random
 
+HANGMAN_PICS = ['''
+    +---+
+        |
+        |
+        |
+       ===''', '''
+    +---+
+    O   |
+        |
+        |
+       ===''', '''
+    +---+
+    O   |
+    |   |
+        |
+       ===''', '''
+    +---+
+    O   |
+   /|   |
+        |
+       ===''', '''
+    +---+
+    O   |
+   /|\  |
+        |
+       ===''', '''
+    +---+
+    O   |
+   /|\  |
+   /    |
+       ===''', '''
+    +---+
+    O   |
+   /|\  |
+   / \  |
+       ===''']
 
 words = ['chicken', 'dog', 'cat', 'mouse', 'frog']
 
@@ -11,10 +47,12 @@ words = ['chicken', 'dog', 'cat', 'mouse', 'frog']
 lives_remaining = 14
 guessed_letters = ""
 
-
+# Getting a Random Word
 def pick_a_word():
     word_position = random.randint(0, len(words) - 1)
     return words[word_position]
 
 
-print(pick_a_word())
+
+
+
