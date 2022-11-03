@@ -59,6 +59,7 @@ def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+# Getting a Guess
 def get_guess(word):
     print_word_with_blanks(word)
     print('Lives Remaining: ' + str(lives_remaining))
@@ -80,3 +81,13 @@ def play():
             print('The word was: ' + word)
             break
 
+
+# Printing the Word
+def print_word_with_blanks(word):
+    display_word = ''
+    for letter in word:
+        if guessed_letters.find(letter) > -1:
+            display_word = display_word + letter
+        else:
+            display_word = display_word + '-'
+    print(display_word)
