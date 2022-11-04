@@ -41,10 +41,10 @@ HANGMAN_PICS = ['''
    / \  |
        ===''']
 
-words = ['chicken', 'dog', 'cat', 'mouse', 'frog']
+words = ['chicken', 'dog', 'cat', 'mouse', 'frog', 'abruptly', 'absurd']
 
 
-lives_remaining = 14
+lives_remaining = 7
 guessed_letters = ""
 
 
@@ -85,7 +85,48 @@ def play():
         if process_guess(guess, word):
             print('You win! Well Done!')
             break
-        if lives_remaining == 0:
+        if (lives_remaining == 6):
+            print("\n+---+")
+            print("    |")
+            print("    |")
+            print("    |")
+            print("   ===")
+        elif lives_remaining == 5: 
+            print("\n+---+")
+            print("O   |")
+            print("    |")
+            print("    |")
+            print("   ===")
+        elif lives_remaining == 4:
+            print("\n+---+")
+            print("O   |")
+            print("|   |")
+            print("    |")
+            print("   ===")
+        elif lives_remaining == 3:
+            print("\n+---+")
+            print(" O  |")
+            print("/|  |")
+            print("    |")
+            print("   ===")
+        elif lives_remaining == 2:
+            print("\n+---+")
+            print(" O  |")
+            print("/|\ |")
+            print("    |")
+            print("   ===")
+        elif lives_remaining == 1:
+            print("\n+---+")
+            print(" O  |")
+            print("/|\ |")
+            print("/   |")
+            print("   ===")
+        elif lives_remaining == 0:
+            print("\n+---+")
+            print(" O   |")
+            print("/|\  |")
+            print("/ \  |")
+            print("    ===")
             print('You are Hung!')
             print('The word was: ' + word)
             break
@@ -109,7 +150,7 @@ def whole_word_guess(guess, word):
 def single_letter_guess(guess, word):
     global guessed_letters
     global lives_remaining
-    if word.find(guess) == 0:
+    if word.find(guess) == -1:
         lives_remaining = lives_remaining - 1
     guessed_letters = guessed_letters + guess.lower()
     if all_letters_guessed(word):
