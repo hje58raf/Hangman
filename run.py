@@ -1,11 +1,7 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 import random
 
 
-words = ['chicken', 'dog', 'cat', 'mouse', 'frog', 'abruptly', 'absurd']
+words = ['chicken', 'cat', 'mouse', 'frog', 'absurd', 'wares']
 
 
 lives_remaining = 7
@@ -37,7 +33,7 @@ def print_word_with_blanks(word):
 def get_guess(word):
     print_word_with_blanks(word)
     print('Lives Remaining: ' + str(lives_remaining))
-    guess = input(' Guess a letter or whole word?')
+    guess = input(' Guess a letter or whole word?\n')
     return guess
 
 
@@ -55,7 +51,7 @@ def play():
             print("    |")
             print("    |")
             print("   ===")
-        elif lives_remaining == 5: 
+        elif lives_remaining == 5:
             print("\n+---+")
             print("O   |")
             print("    |")
@@ -80,7 +76,7 @@ def play():
             print("    |")
             print("   ===")
         elif lives_remaining == 1:
-            print("\n+---+")
+            print("\n +---+")
             print(" O  |")
             print("/|\ |")
             print("/   |")

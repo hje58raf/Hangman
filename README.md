@@ -1,31 +1,96 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Hangman65**
+A classic Hangman game written in Python and played on a Code Institute mock terminal on Heroku.
+Users can try to guess the word by inputting letters until they either guess the word or it is game over. 
+ 
 
-Welcome hje58raf,
+[Hangman65](https://hangman65.herokuapp.com/) - You can view the live site here. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+![Am I Responsive?](images/responsive.png) 
 
-## Reminders
+## **Table of Contents**
+ * [**How to Play**](#how-to-play)
+ * [**User Experience**](#user-experience)
+ * [**Features**](#features)
+ * [**Testing**](#testing)
+ * [**Technologies Used**](#technologies-used)
+ * [**Deployment**](#deployment)
+ * [**Credits**](#credits)
+ 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## **How to Play**
+The aim of the game is to guess the hidden word, represented with _ _ _ _ to show players how many letters are in the word. As the player corrrectly guesses letters, the _ are replaced with the correct letter. If a player puts in an incorrect command, an error message displays and the player is asked to resubmit their choice. 
+The game is over either when the player has correctly guessed the word or they have run out of lives. 
 
-## Creating the Heroku app
+## **User Experience**
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+The purpose of the game is a simple word game for entertainment purposes in a termminal environment using Python.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+The site is designed with user experience in mind:
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+ * User wants to enjoy playing word game.
+ * User wants to win the game and get winning message when it is achieved
+ * User wants to have clear feedback for their action
+ * Provides clear error messages to help the user input the correct values expected
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+ ## **Features**
 
-## Constraints
+ ### **Existing Features**
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+This is the main section of the game, where is picks a random word fromand display the length of the word with underscores. It will display how many lives are left. 
+It the then displays a winner or loser message depending on the outcome.
+
+![Game Play Section](images/start_game.png)
+
+- __The win section__
+
+  - This section displays the winner's message.
+
+  ![The win section](images/win.png)
+
+  __The lose section__
+
+  - This section displays a loser message.
+
+![The lose section](images/lose.png)
+
+
+
+
+## **Future Features**
+ * Add a scoring system.
+ * Implement a true random word generator rather than using a set list. 
+ 
+
+## **Testing**
+I have manually tested the project by doing the following: 
+* Tested the code in the Code Institute Heroku terminal and also the terminal inside of Gitpod. 
+* No errors showing on gitpod terminal after installing pycodestyle due to PEP8 website being down.
+
+![Testing](images/test.png)
+
+## **Technologies Used**
+* Languages
+  * Python.
+* Libraries
+  * random to select a random word.
+
+
+## **Deployment**
+The project was deployed using Code Institutes mock terminal for Heroku. Steps to deploy:
+
+- Go to the Heroku Dashboard.
+- Click New.
+- Select to create a new app.
+- Add Config Var's for Creds and Port
+- Set the buildbacks to Python and NodeJS in that order.
+- Link the Heroku app to the repository.
+- Click on Deploy.
+
+## **Credits**
+ * Code institute for the sample READ.md for layout.
+ * W3 school online
+ * Fellow coders in stackoverview
+ * Youtube videos
+
